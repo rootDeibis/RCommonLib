@@ -14,7 +14,9 @@ public class GuiButtonData<T> {
 
 
     private String textures;
-    public GuiButtonData() {}
+
+    public GuiButtonData() {
+    }
 
 
     public GuiButtonData setMaterial(T material) {

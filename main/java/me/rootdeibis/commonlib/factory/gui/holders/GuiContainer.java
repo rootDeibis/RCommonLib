@@ -34,9 +34,10 @@ public abstract class GuiContainer implements InventoryHolder {
         return 3 * 9;
     }
 
-    public void setButtons(HashMap<Integer,GuiButton> buttons) {
+    public void setButtons(HashMap<Integer, GuiButton> buttons) {
         this.buttons = buttons;
     }
+
     public void addButton(int slot, GuiButton button) {
         this.buttons.put(slot, button);
 
@@ -67,8 +68,7 @@ public abstract class GuiContainer implements InventoryHolder {
     }
 
 
-
-    public HashMap<Integer,GuiButton> getButtons() {
+    public HashMap<Integer, GuiButton> getButtons() {
         return this.buttons;
     }
 
@@ -95,7 +95,7 @@ public abstract class GuiContainer implements InventoryHolder {
     public void close(Player player) {
 
         if (player.getOpenInventory().getTopInventory() instanceof GuiContainer) {
-            GuiContainer container = (GuiContainer)  player.getOpenInventory().getTopInventory();
+            GuiContainer container = (GuiContainer) player.getOpenInventory().getTopInventory();
             removeContainer(container);
         }
     }

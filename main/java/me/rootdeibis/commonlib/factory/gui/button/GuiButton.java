@@ -1,5 +1,6 @@
 package me.rootdeibis.commonlib.factory.gui.button;
 
+import com.cryptomorin.xseries.SkullUtils;
 import me.rootdeibis.commonlib.factory.gui.context.GUIClickContext;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -10,40 +11,41 @@ import java.util.List;
 
 public abstract class GuiButton {
 
-    public GuiButton() {}
+    public GuiButton() {
+    }
 
 
     public abstract GuiButtonData<?> getData();
 
 
-
     public ItemStack getItem() {
 
-        GuiButtonData<?> data = new GuiButtonData<>();
+        GuiButtonData<?> data = this.getData();
 
         ItemStack itemStack = new ItemStack(Material.BEDROCK);
 
-       if (data.getMaterial() != null) {
-           if (data.getMaterial() instanceof Material) {
-               itemStack = new ItemStack((Material) getData().getMaterial());
-           } else if (data.getMaterial() instanceof ItemStack){
-               itemStack = (ItemStack) data.getMaterial();
-           } else {
-               throw new RuntimeException("Invalid getItem Material Type");
-           }
+        if (data.getMaterial() != null) {
+            if (data.getMaterial() instanceof Material) {
+                itemStack = new ItemStack((Material) getData().getMaterial());
+            } else if (data.getMaterial() instanceof ItemStack) {
+                itemStack = (ItemStack) data.getMaterial();
+            } else {
+                throw new RuntimeException("Invalid getItem Material Type");
+            }
 
-       }
+        }
 
         ItemMeta meta = itemStack.getItemMeta();
 
 
-        if (meta instanceof SkullMeta) {
+        if (meta instanceof SkullMeta && getData().getTextures() != null && !getData().getTextures().isEmpty()) {
+            SkullUtils.applySkin(meta, getData().getTextures());
 
         }
 
         int amount = data.getAmount();
 
-        if(itemStack.getAmount() != amount)
+        if (itemStack.getAmount() != amount)
             itemStack.setAmount(amount);
 
         String displayName = data.getDisplayName();

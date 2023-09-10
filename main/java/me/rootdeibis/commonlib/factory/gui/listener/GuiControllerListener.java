@@ -1,8 +1,8 @@
 package me.rootdeibis.commonlib.factory.gui.listener;
 
 import me.rootdeibis.commonlib.factory.gui.button.GuiButton;
-import me.rootdeibis.commonlib.factory.gui.holders.GuiContainer;
 import me.rootdeibis.commonlib.factory.gui.context.GUIClickContext;
+import me.rootdeibis.commonlib.factory.gui.holders.GuiContainer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -13,7 +13,7 @@ public class GuiControllerListener implements Listener {
     @EventHandler
     public void onGuiClickEvent(InventoryClickEvent event) {
 
-        if (event.getClickedInventory() != null && event.getClickedInventory().getHolder()  != null && event.getClickedInventory().getHolder() instanceof GuiContainer) {
+        if (event.getClickedInventory() != null && event.getClickedInventory().getHolder() != null && event.getClickedInventory().getHolder() instanceof GuiContainer) {
 
             GuiContainer container = (GuiContainer) event.getClickedInventory().getHolder();
             event.setCancelled(true);
@@ -34,7 +34,7 @@ public class GuiControllerListener implements Listener {
 
     @EventHandler
     public void onClose(InventoryCloseEvent e) {
-        if ( e.getInventory().getHolder() != null && e.getInventory().getHolder() instanceof GuiContainer) {
+        if (e.getInventory().getHolder() != null && e.getInventory().getHolder() instanceof GuiContainer) {
             GuiContainer container = (GuiContainer) e.getInventory().getHolder();
 
 

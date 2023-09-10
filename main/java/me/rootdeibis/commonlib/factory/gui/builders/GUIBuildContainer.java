@@ -1,7 +1,7 @@
 package me.rootdeibis.commonlib.factory.gui.builders;
 
-import me.rootdeibis.commonlib.factory.gui.holders.GuiContainer;
 import me.rootdeibis.commonlib.factory.gui.button.GuiButton;
+import me.rootdeibis.commonlib.factory.gui.holders.GuiContainer;
 
 import java.util.HashMap;
 

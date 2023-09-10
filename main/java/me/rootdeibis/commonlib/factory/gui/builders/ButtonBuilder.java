@@ -11,11 +11,12 @@ import java.util.function.Consumer;
 public class ButtonBuilder extends GuiButton {
 
 
-
     private final GuiButtonData<Material> data = new GuiButtonData<>();
-    private Consumer<GUIClickContext> onClick = (e) -> {};
+    private Consumer<GUIClickContext> onClick = (e) -> {
+    };
 
-    public ButtonBuilder() {}
+    public ButtonBuilder() {
+    }
 
     @Override
     public GuiButtonData<Material> getData() {

@@ -9,6 +9,7 @@ public class GUIClickContext {
     private final GuiContainer container;
     private final GuiButton clickedButton;
     private final InventoryClickEvent event;
+
     public GUIClickContext(GuiContainer container, GuiButton clickedButton, InventoryClickEvent event) {
         this.container = container;
         this.clickedButton = clickedButton;

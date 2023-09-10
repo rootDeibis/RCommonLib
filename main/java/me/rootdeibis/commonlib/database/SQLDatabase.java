@@ -24,12 +24,13 @@ public abstract class SQLDatabase {
     }
 
     public void setConfig(HikariConfig config) {
-        this.hikariConfig =config;
+        this.hikariConfig = config;
     }
 
     public HikariDataSource getDataSource() {
         return dataSource;
     }
+
     public void loadDataSource() {
         this.dataSource = new HikariDataSource(this.hikariConfig);
     }
@@ -68,9 +69,6 @@ public abstract class SQLDatabase {
         // In our case it can be useful to see the time in error messages
         // config.addDataSourceProperty("maintainTimeStats", false);
     }
-
-
-
 
 
 }

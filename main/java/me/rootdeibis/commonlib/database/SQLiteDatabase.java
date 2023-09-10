@@ -8,16 +8,16 @@ import java.io.File;
 public class SQLiteDatabase extends SQLDatabase {
 
     private static final String SQLITE_DRIVER = "org.sqlite.SQLiteDataSource";
+
     public SQLiteDatabase(File dbFile) {
         try {
 
             if (!dbFile.exists())
                 dbFile.createNewFile();
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
         HikariConfig config = new HikariConfig();

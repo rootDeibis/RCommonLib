@@ -10,13 +10,13 @@ public class MySQLDatabase extends SQLDatabase {
 
     private static final String MARIADB_DRIVER = "org.mariadb.jdbc.Driver";
 
-    public MySQLDatabase(String driver,String host, String port, String database_name, String username, String password) {
+    public MySQLDatabase(String driver, String host, String port, String database_name, String username, String password) {
 
         HikariConfig config = new HikariConfig();
 
         if (driver.equalsIgnoreCase("mariadb")) {
             config.setDriverClassName(MARIADB_DRIVER);
-        } else if(driver.equalsIgnoreCase("mysql")) {
+        } else if (driver.equalsIgnoreCase("mysql")) {
             config.setDriverClassName(MYSQL_DRIVER);
         }
 
@@ -26,7 +26,6 @@ public class MySQLDatabase extends SQLDatabase {
         config.addDataSourceProperty("paranoid", true);
 
         config.setJdbcUrl(JDBC_PROTOCOL + driver + "://" + host + ':' + port + '/' + database_name);
-
 
 
         SQLDatabase.addPerformanceParams(config);

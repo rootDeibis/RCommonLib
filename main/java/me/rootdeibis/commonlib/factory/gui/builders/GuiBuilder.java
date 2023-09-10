@@ -10,9 +10,10 @@ public class GuiBuilder {
 
     private int rows = 2;
 
-    private HashMap<Integer,GuiButton> buttons = new HashMap<>();
+    private final HashMap<Integer, GuiButton> buttons = new HashMap<>();
 
-    public GuiBuilder() {}
+    public GuiBuilder() {
+    }
 
 
     public GuiBuilder setTitle(String title) {
@@ -43,15 +44,13 @@ public class GuiBuilder {
     }
 
 
-    public HashMap<Integer,GuiButton> getButtons() {
+    public HashMap<Integer, GuiButton> getButtons() {
         return buttons;
     }
 
     public GUIBuildContainer build() {
         return new GUIBuildContainer(this);
     }
-
-
 
 
 }
