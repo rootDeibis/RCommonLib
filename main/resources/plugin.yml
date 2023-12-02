@@ -1,6 +1,0 @@
-name: "RCommonLib"
-version: 1.0
-main: test.Main
-api-version: <1.13
-author: rootDeibis
-description: Easy
