@@ -1,7 +1,6 @@
-name: RCommonTest
-main: me.rootdeibis.commonlib.test
+name: "RCommonLib"
 version: 1.0
-api-version: 1.13
+main: test.Main
+api-version: <1.13
 author: rootDeibis
-depend:
-  - ProtocolLib
+description: Easy
